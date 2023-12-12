@@ -11,7 +11,7 @@ def index():
 
 if __name__ == '__main__':
     port = 5550
-    app.run(debug=True)
+    app.run(port=port)
 
 
 
