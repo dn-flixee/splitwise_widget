@@ -1,59 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="static/style.css" />
-  </head>
-  <body>
-    <div class="frame">
-      <div class="div">
-        <div class="overlap">
-          <img class="image" src="img/image-1.png" />
-          <p class="text-wrapper">you are owed Rs. 3000</p>
-          <img class="dp-preview" src="img/dn1-removebg-preview-1.png" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="container mx-auto   relative bg-zinc-800">
+  <nav class="flex items-center justify-between  bg-neutral-900">
+    <!-- Left Section: Logo -->
+    <div class="flex items-center p-1 mr-0">
+        <img src="static/logo.webp" alt="Logo" class="h-8 w-8 ">
+    </div>
+
+    <!-- Center Section: Text -->
+    <div class="text-white text-xs font-normal ">SPLITWISE</div>
+
+    <!-- Right Section: User Photo -->
+    <div class="flex items-center p-1">
+        <img src={{user.picture.small}} alt="User Photo" class="h-5 w-5 rounded-full">
+    </div>
+  </nav>
+
+
+    <div class="flex">
+      <div class="w-1/2 pt-4 p-2 flex flex-col">
+        <div class="mb-4 flex">
+          <!-- Data 1 Components -->
+          <div class="mr-4 ">
+            <img class="mr-0 Ellipse1 w-5 rounded-full" src="{{friends[0].picture.small}} " />
+          </div>
+          <div class="mr-auto  h-5 text-white text-xs font-normal ">{{friends[0].first_name}}</div>
+          <div class="mr-0 h-5  text-xs  text-green-600 font-normal ">{{amount[0]}}</div>
         </div>
-        <div class="overlap-group">
-          <div class="group">
-            <div class="overlap-group-2">
-              <div class="text-wrapper-2">Akash Sinhad</div>
-              <div class="text-wrapper-3">Rs 350</div>
-            </div>
-            <div class="ellipse"></div>
+        <div class="mb-4 flex">
+        <!-- Data 2 Components -->
+          <div class="mr-4 ">
+            <img class="mr-0 Ellipse1 w-5    rounded-full" src="{{friends[1].picture.small}} " />
           </div>
-          <div class="rectangle"></div>
-          <div class="rectangle"></div>
+          <div class="mr-auto h-5 text-white text-xs font-normal ">{{friends[1].first_name}}</div>
+          <div class="mr-0 h-5  text-xs  text-green-600 font-normal ">{{amount[1]}}</div>
         </div>
-        <div class="overlap-2">
-          <div class="group-2">
-            <div class="text-wrapper-4">Amartya</div>
-            <div class="ellipse-2"></div>
-            <div class="text-wrapper-5">Rs 350</div>
+      
+        <div class="mb-4 flex">
+          <!-- Data 3 Components -->
+          <div class="mr-4 ">
+            <img class="mr-0 Ellipse1 w-5    rounded-full" src="{{friends[2].picture.small}} " />
           </div>
-          <div class="rectangle"></div>
+          <div class="mr-auto h-5 text-white text-xs font-normal "> {{friends[2].first_name}}
+          </div>
+          <div class="mr-0 h-5  text-xs  text-green-600 font-normal ">{{amount[2]}}</div>
         </div>
-        <div class="overlap-3">
-          <div class="group-2">
-            <div class="text-wrapper-6">Nidhi</div>
-            <div class="ellipse"></div>
-            <div class="text-wrapper-7">Rs 350</div>
+
+        <div class="mb-4 flex">
+          <!-- Data 3 Components -->
+          <div class="mr-4 ">
+            <img class="mr-0 Ellipse1 w-5    rounded-full" src="{{friends[3].picture.small}} " />
           </div>
-          <div class="rectangle-2"></div>
-        </div>
-        <div class="overlap-4">
-          <div class="group-3">
-            <div class="text-wrapper-8">Amartya added “milk”</div>
-            <div class="text-wrapper-9">You owe Rs 51</div>
+          <div class="mr-auto h-5 text-white text-xs font-normal "> {{friends[3].first_name}}
           </div>
-          <div class="group-4">
-            <div class="text-wrapper-8">Amartya added “milk”</div>
-            <div class="text-wrapper-10">You get back Rs 51</div>
-          </div>
-          <div class="group-5">
-            <div class="text-wrapper-8">Amartya added “milk”</div>
-            <div class="text-wrapper-9">You owe Rs 51</div>
-          </div>
+          <div class="mr-0 h-5  text-xs  text-green-600 font-normal ">{{amount[3]}}</div>
         </div>
       </div>
+      <div class="w-1/2 p-2 flex flex-col">
+        <div class="mb-2 flex">
+          <!-- Data 1 Components -->
+          <div class="mr-4  w-10">
+            <img class="mr-1 pt-2 max-h-8" src="{{notifications[0].image_url}}" />
+          </div>
+          <div class="mr-auto h-auto text-xs font-normal ">{{notifications[0].content|safe}}</div>
+        </div>
+
+        <div class="mb-2 flex">
+          <!-- Data 1 Components -->
+          <div class="mr-4 w-10">
+            <img class="mr-1 pt-2 max-h-8" src="{{notifications[1].image_url}}" />
+          </div>
+          <div class="ml-0 h-auto text-xs font-normal ">{{notifications[1].content|safe}}</div>
+        </div>
+      
+        <div class="mb-2 flex">
+          <!-- Data 1 Components -->
+          <div class="mr-4 w-10">
+            <img class="mr-1 pt-2 max-h-8" src="{{notifications[2].image_url}}" />
+          </div>
+          <div class="ml-0 h-auto text-xs font-normal ">{{notifications[2].content|safe}}</div>
+        </div>
+
+
+      </div>
     </div>
-  </body>
+</div>
+
+</body>
 </html>
